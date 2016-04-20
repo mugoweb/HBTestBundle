@@ -1,3 +1,4 @@
+```
 Copy the Mugo folder to src/
 
 To enable the bundle edit:
@@ -22,6 +23,7 @@ mugo_hb_test:
 ezpublish/config/config.yml
 
 # Assetic Configuration
+
 assetic:
     ...
     bundles:        [ ..., MugoHBTestBundle ]
@@ -34,3 +36,4 @@ You can access the testing page at:
 /hbtest
 
 The ajax url is /hbtest/ajax
+```
