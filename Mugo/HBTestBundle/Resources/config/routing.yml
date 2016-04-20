@@ -1,0 +1,7 @@
+mugo_hb_test_homepage:
+    path:     /hbtest
+    defaults: { _controller: MugoHBTestBundle:Default:index }
+
+mugo_hb_test_ajax_homepage:
+    path:     /hbtest/ajax
+    defaults: { _controller: MugoHBTestBundle:Default:ajax }

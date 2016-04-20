@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <title>Mugo Handlebars test</title>
+    </head>
+
+    <body>
+        <div class="carousel">
+            <ul>
+                {% for item in items %}
+                    <li>
+                        {{item.title}}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="#" class="view-more">View More</a>
+
+        {% verbatim %}
+            <script id="hbtest_widget" type="text/x-handlebars-template">
+                <ul>
+                    {{#each items}}
+                        <li>
+                            {{title}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </script>
+        {% endverbatim %}
+
+        {% javascripts
+            filter='?uglifyjs2'
+            output='cms/js/*'
+            '@MugoHBTestBundle/Resources/public/js/libs/jquery-1.12.1.min.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% javascripts
+            filter='?uglifyjs2'
+            output='cms/js/*'
+            '@MugoHBTestBundle/Resources/public/js/libs/handlebars.min-latest.js'
+            '@MugoHBTestBundle/Resources/public/js/script.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </body>
+
+</html>
